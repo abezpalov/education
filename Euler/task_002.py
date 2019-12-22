@@ -7,17 +7,14 @@
 
 s = 0
 
-first = 0
-second = 1
-
+previous = 0
 current = 1
 
 while current <= 4000000:
-    print(current)
-    current = first + second
-    first = second
-    second = current
+
     if current % 2 == 0:
         s += current
+
+    current, previous = current + previous, current
 
 print(s)
